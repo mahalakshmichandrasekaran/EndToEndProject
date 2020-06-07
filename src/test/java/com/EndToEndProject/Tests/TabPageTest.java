@@ -1,4 +1,17 @@
 package com.EndToEndProject.Tests;
 
-public class TabPageTest {
+import com.EndToEndProject.PageBase.PageBase;
+import com.EndToEndProject.PageObjects.TabPage;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+
+public class TabPageTest extends PageBase {
+    @Test
+    public void tabHome() throws IOException {
+        driver=initializeDriver();
+        TabPage tp=new TabPage(driver);
+        tp.coursePage().click();
+    }
+
 }
