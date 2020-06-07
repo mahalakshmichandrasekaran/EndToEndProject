@@ -22,15 +22,15 @@ public class PageBase {
             driver=new ChromeDriver();
 
         }
-        driver.get("http://www.qaclickacademy.com/");
+        driver.get(prop.getProperty("url"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
 
     }
 
-//    @AfterTest
-//    public void afterTests(){
-//        driver.quit();
-//    }
+   @AfterTest
+   public void afterTests(){
+        driver.quit();
+  }
 }
