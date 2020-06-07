@@ -3,6 +3,7 @@ package com.EndToEndProject.Tests;
 import com.EndToEndProject.PageBase.PageBase;
 import com.EndToEndProject.PageObjects.HomePage;
 import com.EndToEndProject.PageObjects.PracticeHomePage;
+import com.EndToEndProject.PageObjects.TabPage;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -20,14 +21,16 @@ public class HomePageTest extends PageBase {
     @Test(dataProvider = "sendCountry")
     public void practiceHomePage(String Country){
         PracticeHomePage php=new PracticeHomePage(driver);
+        TabPageTest tpt=new TabPageTest();
         if(php.verifyTitlePresent().isDisplayed()){
             System.out.println("title is present");
         }
         php.countryTypeOne().sendKeys(Country);
         php.suggestionSelection().click();
-        php.countryTypeTwo().sendKeys(Country);
+        //php.countryTypeTwo().sendKeys(Country);
        // php.suggestionSelectionTwo().click();
         php.openTabExample().click();
+
 
 
 

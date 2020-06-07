@@ -11,9 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 public class PageBase {
     public WebDriver driver;
+    public  Properties prop;
 
     public WebDriver initializeDriver() throws IOException {
-        Properties prop=new Properties();
+        prop=new Properties();
         FileInputStream fileInputStream=new FileInputStream("src/main/java/com/EndToEndProject/PageBase/Data.properties");
         prop.load(fileInputStream);
         String browserName=prop.getProperty("browser");
@@ -29,8 +30,8 @@ public class PageBase {
 
     }
 
-   @AfterTest
-   public void afterTests(){
-        driver.quit();
-  }
+//   @AfterTest
+//   public void afterTests(){
+//        driver.quit();
+//  }
 }

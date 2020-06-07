@@ -10,6 +10,7 @@ public class TabPageTest extends PageBase {
     @Test
     public void tabHome() throws IOException {
         driver=initializeDriver();
+        driver.get(prop.getProperty("taburl"));
         TabPage tp=new TabPage(driver);
         tp.coursePage().click();
     }
