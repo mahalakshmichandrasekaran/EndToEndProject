@@ -15,7 +15,6 @@ public class TabPageTest extends PageBase {
     public void tabHome() throws IOException {
         driver=initializeDriver();
         driver.get(prop.getProperty("taburl"));
-        logger.info("A seperate tab is displayed");
         TabPage tp=new TabPage(driver);
         tp.coursePage().click();
         logger.info("click on courses tab");
