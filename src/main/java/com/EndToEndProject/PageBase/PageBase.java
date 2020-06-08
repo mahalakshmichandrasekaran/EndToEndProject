@@ -30,8 +30,8 @@ public class PageBase {
 
     }
 
-//   @AfterTest
-//   public void afterTests(){
-//        driver.quit();
-//  }
+   @AfterTest
+   public void afterTests(){
+        driver.quit();
+  }
 }
