@@ -39,10 +39,11 @@ public class PageBase {
         driver.quit();
   }
 
-  public void getScreenShot(String testMethodName,WebDriver driver) throws IOException {
+  public String getScreenShot(String testMethodName,WebDriver driver) throws IOException {
       TakesScreenshot ts=(TakesScreenshot)driver;
       File sourceForScreenshot=ts.getScreenshotAs(OutputType.FILE);
       String destinationScreenshot=System.getProperty("user.dir")+"//reports//"+testMethodName+".png";
       FileUtils.copyFile(sourceForScreenshot,new File(destinationScreenshot));
+      return destinationScreenshot;
   }
 }
