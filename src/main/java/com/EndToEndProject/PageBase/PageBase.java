@@ -34,16 +34,15 @@ public class PageBase {
 
     }
 
-   @AfterTest
-   public void afterTests(){
-        driver.quit();
-  }
-
-  public String getScreenShot(String testMethodName,WebDriver driver) throws IOException {
+    public String getScreenShot(String testMethodName,WebDriver driver) throws IOException {
       TakesScreenshot ts=(TakesScreenshot)driver;
       File sourceForScreenshot=ts.getScreenshotAs(OutputType.FILE);
       String destinationScreenshot=System.getProperty("user.dir")+"//reports//"+testMethodName+".png";
       FileUtils.copyFile(sourceForScreenshot,new File(destinationScreenshot));
       return destinationScreenshot;
   }
+    @AfterTest
+    public void afterTests(){
+        driver.quit();
+    }
 }
