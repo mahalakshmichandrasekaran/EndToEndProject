@@ -5,11 +5,13 @@ import com.EndToEndProject.PageObjects.TabPage;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 public class TabPageTest extends PageBase {
+    private WebDriver driver;
     private static Logger logger= LogManager.getLogger(TabPageTest.class.getName());
     @Test
     public void tabHome() throws IOException {

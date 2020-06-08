@@ -5,6 +5,7 @@ import com.EndToEndProject.PageObjects.HomePage;
 import com.EndToEndProject.PageObjects.PracticeHomePage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ import java.io.IOException;
 
 
 public class HomePageTest extends PageBase {
+    private WebDriver driver;
     private static Logger logger= LogManager.getLogger(HomePageTest.class.getName());
 
     @Test
