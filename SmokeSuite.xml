@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+    <groups>
+        <run>
+            <include name="Smoke"/>
+        </run>
+    </groups>
+    <test name="smoketests">
+        <classes>
+            <class name="com.EndToEndProject.Tests.TabPageTest"></class>
+        </classes>
+    </test>
+    <test name="smoketests2">
+        <classes>
+            <class name="com.EndToEndProject.Tests.HomePageTest"></class>
+        </classes>
+    </test>
+</suite>

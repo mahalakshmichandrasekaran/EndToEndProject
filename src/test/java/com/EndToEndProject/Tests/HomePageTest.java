@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.xml.XmlGroups;
 
 import java.io.IOException;
 
@@ -25,8 +26,10 @@ public class HomePageTest extends PageBase {
         logger.info("Click on Practice link");
 
     }
-    @Test(dataProvider = "sendCountry")
-    public void practiceHomePage(String Country){
+    @Test(dataProvider = "sendCountry",enabled = true,groups = {"Smoke"},timeOut = 40000)
+    public void practiceHomePage(String Country) throws IOException {
+        driver=initializeDriver();
+        driver.get(prop.getProperty("practiceurl"));
         PracticeHomePage php=new PracticeHomePage(driver);
         TabPageTest tpt=new TabPageTest();
         Assert.assertTrue(php.verifyTitlePresent().isDisplayed(),"title is present");

@@ -13,7 +13,7 @@ import java.io.IOException;
 public class TabPageTest extends PageBase {
     private WebDriver driver;
     private static Logger logger= LogManager.getLogger(TabPageTest.class.getName());
-    @Test
+    @Test(groups = {"Smoke"},enabled = true,timeOut = 40000)
     public void tabHome() throws IOException {
         driver=initializeDriver();
         driver.get(prop.getProperty("taburl"));
