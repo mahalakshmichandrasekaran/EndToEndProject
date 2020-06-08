@@ -3,33 +3,40 @@ package com.EndToEndProject.Tests;
 import com.EndToEndProject.PageBase.PageBase;
 import com.EndToEndProject.PageObjects.HomePage;
 import com.EndToEndProject.PageObjects.PracticeHomePage;
-import com.EndToEndProject.PageObjects.TabPage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+
 public class HomePageTest extends PageBase {
+    private static Logger logger= LogManager.getLogger(HomePageTest.class.getName());
 
     @Test
     public void base() throws IOException {
         driver=initializeDriver();
         HomePage hpo=new HomePage(driver);
         hpo.goToPractice().click();
+        logger.info("Click on Practice link");
 
     }
     @Test(dataProvider = "sendCountry")
     public void practiceHomePage(String Country){
         PracticeHomePage php=new PracticeHomePage(driver);
         TabPageTest tpt=new TabPageTest();
-        if(php.verifyTitlePresent().isDisplayed()){
-            System.out.println("title is present");
-        }
+        Assert.assertTrue(php.verifyTitlePresent().isDisplayed(),"title is present");
+        logger.info("verifying title is present");
         php.countryTypeOne().sendKeys(Country);
+        logger.info("verifying the suggestion text box");
         php.suggestionSelection().click();
+        logger.info("country is selected");
         //php.countryTypeTwo().sendKeys(Country);
        // php.suggestionSelectionTwo().click();
         php.openTabExample().click();
+        logger.info("Click on Tab");
 
 
 
