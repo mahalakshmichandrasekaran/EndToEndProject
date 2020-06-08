@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class TabPageTest extends PageBase {
-    private WebDriver driver;
+    public WebDriver driver;
     private static Logger logger= LogManager.getLogger(TabPageTest.class.getName());
     @Test(groups = {"Smoke"},enabled = true,timeOut = 40000)
     public void tabHome() throws IOException {

@@ -16,4 +16,7 @@
             <class name="com.EndToEndProject.Tests.HomePageTest"></class>
         </classes>
     </test>
+    <listeners>
+        <listener class-name="com.EndToEndProject.Listeners.Listeners"></listener>
+    </listeners>
 </suite>

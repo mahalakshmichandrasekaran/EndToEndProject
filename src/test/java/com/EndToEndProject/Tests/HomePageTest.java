@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 public class HomePageTest extends PageBase {
-    private WebDriver driver;
+    public WebDriver driver;
     private static Logger logger= LogManager.getLogger(HomePageTest.class.getName());
 
     @Test
@@ -29,7 +29,7 @@ public class HomePageTest extends PageBase {
     @Test(dataProvider = "sendCountry",enabled = true,groups = {"Smoke"},timeOut = 40000)
     public void practiceHomePage(String Country) throws IOException {
         driver=initializeDriver();
-        driver.get(prop.getProperty("practiceurl"));
+        //driver.get(prop.getProperty("practiceurl"));
         PracticeHomePage php=new PracticeHomePage(driver);
         TabPageTest tpt=new TabPageTest();
         Assert.assertTrue(php.verifyTitlePresent().isDisplayed(),"title is present");
